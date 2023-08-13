@@ -1,2 +1,4 @@
-<app-header></app-header>
+<!-- The target in the square brackets, [], is the property you decorate with @Input() in the child component. 
+    The binding source, the part to the right of the equal sign, is the data that the parent component passes to the nested component. -->
+<app-header [cart]="cart"></app-header>
 <router-outlet></router-outlet>
