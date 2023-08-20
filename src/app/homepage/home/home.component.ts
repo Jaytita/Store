@@ -26,7 +26,7 @@ export class HomeComponent {
     private cartService: CartService,
     private storeService: StoreService
   ) {}
-  
+
   ngOnInit(): void {
     this.getProducts();
   }
@@ -44,9 +44,19 @@ export class HomeComponent {
     this.rowHeight = ROWS_HEIGHT[colsNum];
   }
 
+  onItemsCountChange(count: number): void {
+    this.count = count.toString();
+    this.getProducts();
+  }
+
+  onSortChange(newSort: string): void {
+    this.sort = newSort;
+    this.getProducts();
+  }
+
   onShowCategory(newCategory: string): void {
     this.category = newCategory;
-    //this.getProducts();
+    this.getProducts();
   }
 
   onAddToCart(product: Product): void {
